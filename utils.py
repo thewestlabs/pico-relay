@@ -6,8 +6,6 @@ uart = UART(UART_BLE_PORT, 9600, rx=Pin(UART_BLE_RX), tx=Pin(UART_BLE_TX))
 conversion_factor = (3.3/65536) * VOLTAGE_MULTIPLIER
 relay = Pin(GPIO_RELAY_PIN, Pin.OUT)
 
-relay_status = 0
-
 def read_voltage() -> float:
     voltage = adc.read_u16() * conversion_factor
     return float("{:.2f}".format(voltage))
@@ -25,9 +23,8 @@ def read_bluetooth():
 def write_bluetooth(data):
     uart.write(str(data) + "\n")
 
-def toggle_relay():
-  relay_status = 1 if (self.status == 0) else 0
-  relay.value(relay_status)
+def connect_relay():
+    relay.value(0)
 
 def disconnect_relay():
-  relay.value(1)
+    relay.value(1)
