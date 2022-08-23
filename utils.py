@@ -28,3 +28,6 @@ def write_bluetooth(data):
 def toggle_relay():
   relay_status = 1 if (self.status == 0) else 0
   relay.value(relay_status)
+
+def disconnect_relay():
+  relay.value(1)
