@@ -6,5 +6,8 @@ while True:
     voltage = read_voltage()
     print(f"voltage: {voltage}v")
     if (voltage > 14.4):
-        print("voltage above")
+        print("voltage high")
         disconnect_relay()
+    if (voltage > 12.1):
+        print("voltage low")
+        connect_relay()
