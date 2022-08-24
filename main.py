@@ -1,5 +1,5 @@
 import time
-from utils import read_voltage, disconnect_relay
+from utils import read_voltage, disconnect_relay, connect_relay
 
 while True:
     time.sleep(2)
