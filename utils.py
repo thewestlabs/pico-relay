@@ -43,5 +43,5 @@ def read_time():
         return None
 
 def set_time(time):
-    if (self.i2c_addr != []):
-        self.rtc.set_time(time)  # '03:52:30,Thursday,2022-07-28'
+    if (rtc_i2c_addr != []):
+        rtc.set_time(time)  # format: '03:52:30,Thursday,2022-07-28'
