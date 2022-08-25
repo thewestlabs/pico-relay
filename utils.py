@@ -33,7 +33,7 @@ def connect_relay():
 def disconnect_relay():
     relay.value(1)
 
-def read_time(self):
+def read_time():
     if rtc_i2c_addr != []:
         date_time = rtc.read_time()
         items = date_regex.split(date_time)
