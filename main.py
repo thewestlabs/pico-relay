@@ -15,6 +15,6 @@ while True:
     elif (voltage > 14.4):
         disconnect_relay()
         print("voltage high")
-    eliif (voltage < 12.1):
+    elif (voltage < 12.1):
         connect_relay()
         print("voltage low")
