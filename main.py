@@ -12,7 +12,7 @@ while True:
     
     if (hour > 17 or hour < 5):
         connect_relay()
-        print("grid lockin")
+        print("grid time!")
     elif (voltage > 14.4):
         disconnect_relay()
         print("voltage high")
