@@ -10,6 +10,7 @@ relay = Pin(GPIO_RELAY_PIN, Pin.OUT)
 rtc = ds3231(I2C_RTC_PORT, I2C_RTC_SCL, I2C_RTC_SDA)
 rtc_i2c_addr = [hex(ii) for ii in rtc.bus.scan()] 
 date_regex = re.compile(" |:|/")
+led = Pin(25, Pin.OUT)
 
 def read_voltage() -> float:
     voltage = adc.read_u16() * conversion_factor
@@ -45,3 +46,6 @@ def read_time():
 def set_time(time):
     if (rtc_i2c_addr != []):
         rtc.set_time(time)  # format: '03:52:30,Thursday,2022-07-28'
+
+def toggle_onboard_led():
+    led.toggle()
